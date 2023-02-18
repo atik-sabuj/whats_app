@@ -71,18 +71,40 @@ class _HomePageState extends State<HomePage> {
                       );
                      }
                   ),
-              Text('Status'),
               ListView.builder(
                   itemCount: 100,
                   itemBuilder: (context, index){
-                    return const ListTile(
+                    return ListTile(
+                      leading: Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.green,
+                            width: 3,
+                          )
+                        ),
+                        child: CircleAvatar(
+                          backgroundImage:
+                          NetworkImage('https://render.fineartamerica.com/images/rendered/square-dynamic/small/images/artworkimages/mediumlarge/2/roger-moore-roy-jones.jpg'),
+                        ),
+                      ),
+                      title : Text('James Bond'),
+                      subtitle: Text('35m ago'),
+                    );
+                  }
+              ),
+              ListView.builder(
+                  itemCount: 100,
+                  itemBuilder: (context, index){
+                    return  ListTile(
                       leading: CircleAvatar(
                         backgroundImage:
                         NetworkImage('https://render.fineartamerica.com/images/rendered/square-dynamic/small/images/artworkimages/mediumlarge/2/roger-moore-roy-jones.jpg'),
                       ),
                       title : Text('James Bond'),
-                      subtitle: Text('you missed call'),
-                      trailing: Icon(Icons.phone),
+                      subtitle: Text(index /2 == 0 ? 'you missed audio call' :
+                      'call times is 12.23 pm'),
+                      trailing: Icon(index /2 == 0 ? Icons.phone : Icons.video_call),
                     );
                   }
               ),
