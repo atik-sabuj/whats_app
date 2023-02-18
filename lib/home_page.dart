@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
               ListView.builder(
                 itemCount: 100,
                   itemBuilder: (context, index){
-                    return ListTile(
+                    return const ListTile(
                       leading: CircleAvatar(
                         backgroundImage:
                         NetworkImage('https://render.fineartamerica.com/images/rendered/square-dynamic/small/images/artworkimages/mediumlarge/2/roger-moore-roy-jones.jpg'),
@@ -72,7 +72,20 @@ class _HomePageState extends State<HomePage> {
                      }
                   ),
               Text('Status'),
-              Text('Call'),
+              ListView.builder(
+                  itemCount: 100,
+                  itemBuilder: (context, index){
+                    return const ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage:
+                        NetworkImage('https://render.fineartamerica.com/images/rendered/square-dynamic/small/images/artworkimages/mediumlarge/2/roger-moore-roy-jones.jpg'),
+                      ),
+                      title : Text('James Bond'),
+                      subtitle: Text('you missed call'),
+                      trailing: Icon(Icons.phone),
+                    );
+                  }
+              ),
             ],
           ),
       ),
