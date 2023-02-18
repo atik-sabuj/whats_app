@@ -74,23 +74,63 @@ class _HomePageState extends State<HomePage> {
               ListView.builder(
                   itemCount: 100,
                   itemBuilder: (context, index){
-                    return ListTile(
-                      leading: Container(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: Colors.green,
-                            width: 3,
-                          )
+                    if(index == 0){
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('New updates'),
+                            ListTile(
+                              leading: Container(
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: Colors.green,
+                                      width: 3,
+                                    )
+                                ),
+                                child: CircleAvatar(
+                                  backgroundImage:
+                                  NetworkImage('https://render.fineartamerica.com/images/rendered/square-dynamic/small/images/artworkimages/mediumlarge/2/roger-moore-roy-jones.jpg'),
+                                ),
+                              ),
+                              title : Text('James Bond'),
+                              subtitle: Text('35m ago'),
+                            ),
+                          ],
                         ),
-                        child: CircleAvatar(
-                          backgroundImage:
-                          NetworkImage('https://render.fineartamerica.com/images/rendered/square-dynamic/small/images/artworkimages/mediumlarge/2/roger-moore-roy-jones.jpg'),
+                      );
+                    }else {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('New updates'),
+                            ListTile(
+                              leading: Container(
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: Colors.green,
+                                      width: 3,
+                                    )
+                                ),
+                                child: CircleAvatar(
+                                  backgroundImage:
+                                  NetworkImage('https://render.fineartamerica.com/images/rendered/square-dynamic/small/images/artworkimages/mediumlarge/2/roger-moore-roy-jones.jpg'),
+                                ),
+                              ),
+                              title : Text('James Bond'),
+                              subtitle: Text('35m ago'),
+                            ),
+                          ],
                         ),
-                      ),
-                      title : Text('James Bond'),
-                      subtitle: Text('35m ago'),
-                    );
+                      );
+                    }
                   }
               ),
               ListView.builder(
