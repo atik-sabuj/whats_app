@@ -31,14 +31,30 @@ class _HomePageState extends State<HomePage> {
                   child: Text('Call'),
                 ),
           ]),
-          actions: const [
+          actions: [
             Icon(Icons.search),
             SizedBox(width: 10,),
-            Icon(Icons.more_horiz_outlined),
+            PopupMenuButton(
+                icon: Icon(Icons.more_horiz_outlined),
+                itemBuilder: (context,) => const[
+                  PopupMenuItem(
+                    value: 1,
+                      child: Text('New Group'),
+                  ),
+                  PopupMenuItem(
+                    value: 2,
+                    child: Text('Settings'),
+                  ),
+                  PopupMenuItem(
+                    value: 3,
+                    child: Text('Log Out'),
+                  ),
+                ]
+            ),
             SizedBox(width: 10,),
           ],
         ),
-          body: TabBarView(
+          body: const TabBarView(
             children: [
               Text('Camera'),
               Text('Chats'),
