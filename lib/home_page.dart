@@ -11,26 +11,42 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 3,
-        child: Scaffold(
+      length: 4,
+      child: Scaffold(
         appBar: AppBar(
-        title: Text('WhatsApp'),
-        bottom: TabBar(
-          tabs: [
-          Text('Chats'),
-          Text('Status'),
-          Text('Call'),
-         ]
+          centerTitle: false,
+          title: Text('WhatsApp'),
+          bottom: const TabBar(
+              tabs: [
+                Tab(
+                  child: Icon(Icons.camera_alt),
+                ),
+                Tab(
+                  child: Text('Chats'),
+                ),
+                Tab(
+                  child: Text('Status'),
+                ),
+                Tab(
+                  child: Text('Call'),
+                ),
+          ]),
+          actions: const [
+            Icon(Icons.search),
+            SizedBox(width: 10,),
+            Icon(Icons.more_horiz_outlined),
+            SizedBox(width: 10,),
+          ],
         ),
-      ),
-/*          body: TabBarView(
+          body: TabBarView(
             children: [
-              Text('1'),
-              Text('1'),
-              Text('1'),
+              Text('Camera'),
+              Text('Chats'),
+              Text('Status'),
+              Text('Call'),
             ],
-          ),*/
-        ),
+          ),
+      ),
     );
   }
 }
