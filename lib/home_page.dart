@@ -54,10 +54,23 @@ class _HomePageState extends State<HomePage> {
             SizedBox(width: 10,),
           ],
         ),
-          body: const TabBarView(
+          body: TabBarView(
             children: [
               Text('Camera'),
-              Text('Chats'),
+              ListView.builder(
+                itemCount: 100,
+                  itemBuilder: (context, index){
+                    return ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage:
+                        NetworkImage('https://render.fineartamerica.com/images/rendered/square-dynamic/small/images/artworkimages/mediumlarge/2/roger-moore-roy-jones.jpg'),
+                      ),
+                      title : Text('James Bond'),
+                      subtitle: Text('Whats up bro?'),
+                      trailing: Text('01:32 AM'),
+                      );
+                     }
+                  ),
               Text('Status'),
               Text('Call'),
             ],
