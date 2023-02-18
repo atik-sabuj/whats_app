@@ -10,10 +10,27 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return DefaultTabController(
+        length: 3,
+        child: Scaffold(
+        appBar: AppBar(
         title: Text('WhatsApp'),
+        bottom: TabBar(
+          tabs: [
+          Text('Chats'),
+          Text('Status'),
+          Text('Call'),
+         ]
+        ),
       ),
+/*          body: TabBarView(
+            children: [
+              Text('1'),
+              Text('1'),
+              Text('1'),
+            ],
+          ),*/
+        ),
     );
   }
 }
